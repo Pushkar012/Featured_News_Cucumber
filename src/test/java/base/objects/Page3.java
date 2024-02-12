@@ -1,5 +1,6 @@
 package base.objects;
 
+import java.io.FileWriter;
 import java.io.IOException;
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
@@ -35,6 +36,7 @@ public class Page3 extends Driver {
         scrollToViewAndCapture("News1", By.xpath("//*[@id='spPageCanvasContent']/div/div/div/div/div"));
         Thread.sleep(3000);
         driver.navigate().back();
+        driver.navigate().refresh(); // reload method
         System.out.println();
         System.out.println("News 1 Verified and Captured");
         System.out.println("-----------------------------------------------------");
@@ -50,6 +52,7 @@ public class Page3 extends Driver {
         scrollToViewAndCapture("News2", By.xpath("//*[@id=\'fa45f946-463e-428f-a84b-0bbbde09c3ba\']/div/div"));
         Thread.sleep(3000);
         driver.navigate().back();
+        driver.navigate().refresh(); // reload method
         System.out.println();
         System.out.println("News 2 Verified and Captured");
         System.out.println("-----------------------------------------------------");
@@ -65,6 +68,7 @@ public class Page3 extends Driver {
         scrollToViewAndCapture("News3", By.xpath("//*[@id=\'fa45f946-463e-428f-a84b-0bbbde09c3ba\']/div/div"));
         Thread.sleep(3000);
         driver.navigate().back();
+        driver.navigate().refresh(); // reload method
         System.out.println();
         System.out.println("News 3 Verified and Captured");
         System.out.println("-----------------------------------------------------");
@@ -81,6 +85,7 @@ public class Page3 extends Driver {
 
         //Thread.sleep(3000);
         driver.navigate().back();
+        driver.navigate().refresh(); // reload method
         System.out.println();
         System.out.println("News 4 Verified and Captured");
         System.out.println("-----------------------------------------------------");
@@ -115,14 +120,25 @@ public class Page3 extends Driver {
 
  
 
-        private void captureAndStoreParagraphs(String newsName, By locator) throws IOException {
-            WebElement paragraphDiv = driver.findElement(locator);
-            String paragraphs = paragraphDiv.getText();
-            System.out.println(paragraphs);
-            String filename = "NewsText\\" + newsName + ".txt";
-            
-         // To store newsContent in different text files for all 5 news on homePage
-            Reuse.writeToFile(filename, paragraphs); 
-        }
+     private void captureAndStoreParagraphs(String newsName, By locator) throws IOException {
+    	    WebElement paragraphDiv = driver.findElement(locator);
+    	    String paragraphs = paragraphDiv.getText();
+    	    System.out.println(paragraphs);
+    	    String filename = "NewsText/" + newsName + ".txt";
+
+    	    // To store newsContent in different text files for all 5 news on homePage
+    	    Reuse.writeToFile(filename, paragraphs);
+
+    	    // Alternatively, you can directly write the paragraphs to the file using FileWriter
+    	    
+    	    try (FileWriter writer = new FileWriter(filename)) {
+    	        writer.write(paragraphs);
+    	        System.out.println("File created successfully.");
+    	    } catch (IOException e) {
+    	        System.out.println("An error occurred while creating the file: " + e.getMessage());
+    	    }
+    	    
+    	}
+
 
 }
