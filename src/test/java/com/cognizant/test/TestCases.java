@@ -32,7 +32,7 @@ public class TestCases extends Driver {
 		reports.setSystemInfo("Pushkar Kumar", "Author1");
 		reports.setSystemInfo("Alla Teja Sri", "Author2");
 		reports.setSystemInfo("Afsha Sultana", "Author3");
-		reports.setSystemInfo("Surya Vamshi", "Author4");
+		reports.setSystemInfo("Surya Vamsi", "Author4");
 		try
 		{
 			Driver.setup();

@@ -21,7 +21,9 @@ public class Page2 extends Driver {
 		System.out.println("====================================================================================================================================");
 		System.out.println("                         Total News Count And News Headings                        ");
 		System.out.println("=====================================================================================================================================");
-			List<WebElement> count=driver.findElements(By.xpath("//*[@role='listitem']/div/div/div/div/div/a"));
+		System.out.println();	
+		List<WebElement> count=driver.findElements(By.xpath("//*[@role='listitem']/div/div/div/div/div/a"));
+		System.out.println();
 			System.out.println("Total number of news: " +count.size());
 			
 	//Validating news with tool tip

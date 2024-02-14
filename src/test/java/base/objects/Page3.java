@@ -10,20 +10,21 @@ import com.base.com.*;
 
 public class Page3 extends Driver {
 
-    //News1_Xpath
-    By News1=By.xpath("(//div[@class='z_a_91bed31b l_a_91bed31b'])[1]");
+	//News1_Xpath
+    By News1=By.xpath("(//*[@class='ar_b_91bed31b ac_b_91bed31b'])[1]");
 
     //News2_Xpath
-    By News2=By.xpath("(//div[@class='z_a_91bed31b l_a_91bed31b'])[2]");
+    By News2=By.xpath("(//*[@class='ar_b_91bed31b ac_b_91bed31b'])[2]");
 
     //News3_Xpath
-    By News3=By.xpath("(//div[@class='z_a_91bed31b l_a_91bed31b'])[3]");
+    By News3=By.xpath("(//*[@class='ar_b_91bed31b ac_b_91bed31b'])[3]");
 
     //News4_Xpath
-    By News4=By.xpath("(//div[@class='z_a_91bed31b l_a_91bed31b'])[4]");
+    By News4=By.xpath("(//*[@class='ar_b_91bed31b ac_b_91bed31b'])[4]");
 
     //News5_Xpath
-    By News5=By.xpath("(//div[@class='z_a_91bed31b l_a_91bed31b'])[5]");
+    By News5=By.xpath("(//*[@class='ar_b_91bed31b ac_b_91bed31b'])[5]");
+
 
     public void VerifyNews() throws InterruptedException,IOException
     {
